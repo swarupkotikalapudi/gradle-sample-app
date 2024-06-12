@@ -1,0 +1,68 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+        id 'java-library'
+        id 'com.google.cloud.tools.jib' version '3.4.3'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'io.gradlecode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+apply plugin: 'maven-publish'
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact("build/libs/gradle-example-$version"+".jar") {
+                extension 'jar'
+            }
+        }
+    }
+    //repositories {
+    //    maven {
+    //        name 'nexus'
+    //        url "http://[your nexus ip]:[your nexus port]/repository/maven-releases/"
+    //        credentials {
+    //            username project.repoUser
+    //            password project.repoPassword
+    //        }}
+    //}
+}
+
+jib.to.image = 'swarupkotikalapudi/gradle-example'
+
+jib {
+    from {
+       image = 'openjdk:8-jdk-slim'
+    }
+    to {
+        image = 'docker.io/swarupkotikalapudi/gradle-example'
+        auth {
+            username = "swarupkotikalapudi"
+            password = ""
+        }
+    }
+    container {
+         mainClass = 'io.gradleexample.GradleExampleApplication'
+        jvmFlags = ['-Xms512m', '-Xmx1024m']
+        ports = ['8080']
+    }
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnit()
+
+    maxHeapSize = '1G'
+}
