@@ -10,4 +10,5 @@ public class GradleExampleApplication {
 		SpringApplication.run(GradleExampleApplication.class, args);
 	}
 
+	
 }
