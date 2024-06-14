@@ -8,7 +8,6 @@ public class GradleExampleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GradleExampleApplication.class, args);
-		
 	}
 
 }
