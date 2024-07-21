@@ -43,14 +43,14 @@ jib {
     }
     to {
         //image = 'docker.io/swarupkotikalapudi/gradle-example'
-	image = '10.52.0.26:9000/fabricmanager'
+	image = '10.52.0.26:9000/fabricmanager/test-app'
         auth {
             //username = "swarupkotikalapudi"
 	    username = "fabricmci"
             password = ""
         }
     }
-    allowInsecureRegistries : true	
+    allowInsecureRegistries = true	
     container {
          mainClass = 'io.gradleexample.GradleExampleApplication'
         jvmFlags = ['-Xms512m', '-Xmx1024m']
