@@ -35,7 +35,7 @@ publishing {
 //jib.to.image = 'swarupkotikalapudi/gradle-example'
 
 // @todo remove this
-jib.to.image = 'fabricmanager/test-app'
+jib.to.image = 'fabricmci/fabricmanager'
 
 jib {
     from {
@@ -43,7 +43,7 @@ jib {
     }
     to {
         //image = 'docker.io/swarupkotikalapudi/gradle-example'
-	image = '10.52.0.26:9000/fabricmanager/test-app'
+	image = '10.52.0.26:9000/fabricmanager'
         auth {
             //username = "swarupkotikalapudi"
 	    username = "fabricmci"
