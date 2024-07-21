@@ -50,6 +50,7 @@ jib {
             password = ""
         }
     }
+    allowInsecureRegistries : true	
     container {
          mainClass = 'io.gradleexample.GradleExampleApplication'
         jvmFlags = ['-Xms512m', '-Xmx1024m']
