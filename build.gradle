@@ -31,17 +31,23 @@ publishing {
     //}
 }
 
-jib.to.image = 'swarupkotikalapudi/gradle-example'
+//@todo uncomment below
+//jib.to.image = 'swarupkotikalapudi/gradle-example'
+
+// @todo remove this
+jib.to.image = 'fabricmanager/test-app'
 
 jib {
     from {
        image = 'openjdk:8-jdk-slim'
     }
     to {
-        image = 'docker.io/swarupkotikalapudi/gradle-example'
+        //image = 'docker.io/swarupkotikalapudi/gradle-example'
+	image = 'fabricmanager/test-app'    
         auth {
-            username = "swarupkotikalapudi"
-            password = ""
+            //username = "swarupkotikalapudi"
+	    username = "fabricmci"
+            password = "Drut2020"
         }
     }
     container {
