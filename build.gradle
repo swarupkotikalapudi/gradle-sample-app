@@ -43,11 +43,11 @@ jib {
     }
     to {
         //image = 'docker.io/swarupkotikalapudi/gradle-example'
-	image = '10.52.0.26:9000/fabricmanager'
+	image = '10.52.0.26:9000/fabricmanager/test-app'
         auth {
             //username = "swarupkotikalapudi"
 	    username = "fabricmci"
-            password = "Drut2020"
+            password = ""
         }
     }
     container {
