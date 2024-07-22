@@ -9,14 +9,14 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'io.gradlecode'
 //version = '0.0.1-SNAPSHOT' // <- original
-version = '0.0.1-RELEASE'
+version = System.getenv('JAR_TAG')
 sourceCompatibility = '1.8'
 
 apply plugin: 'maven-publish'
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact("build/libs/gradle-example-$version"+".jar") {
+            artifact("build/libs/gradle-example-$version"+".jar") {	    
                 extension 'jar'
             }
         }
