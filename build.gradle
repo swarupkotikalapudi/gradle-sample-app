@@ -35,7 +35,7 @@ publishing {
 //jib.to.image = 'swarupkotikalapudi/gradle-example'
 
 // @todo remove this
-jib.to.image = 'fabricmci/fabricmanager'
+jib.to.image = '10.52.0.26:9000/fabricmanager/test-app'
 
 jib {
     from {
