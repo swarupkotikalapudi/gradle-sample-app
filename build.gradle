@@ -29,7 +29,17 @@ publishing {
     //            password project.repoPassword
     //        }}
     //}
+    repositories {
+        maven {
+            name 'nexus'
+            url "https://10.52.0.26/repository/maven-releases/"
+            credentials {
+                username = System.getenv('nexus_user')
+                password = System.getenv('nexus_pass')
+            }}
+    }
 }
+
 
 //@todo uncomment below
 //jib.to.image = 'swarupkotikalapudi/gradle-example'
@@ -46,7 +56,7 @@ jib {
 	image = '10.52.0.26:9000/fabricmanager/test-app'
         auth {
             //username = "swarupkotikalapudi"
-	    username = "fabricmci"
+	    username = ""
             password = ""
         }
     }
