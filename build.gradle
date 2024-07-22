@@ -8,7 +8,8 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group = 'io.gradlecode'
-version = '0.0.1-SNAPSHOT'
+//version = '0.0.1-SNAPSHOT' // <- original
+version = '0.0.1-RELEASE'
 sourceCompatibility = '1.8'
 
 apply plugin: 'maven-publish'
